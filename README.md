@@ -3,7 +3,7 @@ Module made for tweening multiple instances in parallel or individually.
 Made by captivater.
 
 # Installation
-Create new ModuleScripts with contents of `Signal.lua` and `init,lua`.
+Create new ModuleScripts with contents of `Signal.lua` and `Tweener.lua`.
 Make sure both of ModuleScripts are in the same directory.
 
 # Usage
