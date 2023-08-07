@@ -3,8 +3,8 @@ Module made for tweening multiple instances in parallel or individually.
 Made by captivater.
 
 # Installation
-Create new ModuleScripts with contents of `Signal.lua` and `Tweener.lua`.
-Make sure both of ModuleScripts are in the same directory.
+Create new ModuleScript with content of `Tweener.lua`.
+In the older versions it also needed `Signal.lua`, but now it got removed for easier installation.
 
 # Usage
 Here is an example of how you can tween multiple instances at once:
