@@ -5,11 +5,10 @@ local Tweener = {}
 -- https://github.com/qaptivator/roblox-tweener
 
 local TweenService = game:GetService("TweenService")
-local Signal = require(script.Parent.Signal)
 
 local Tweens = {}
 Tweens.__index = Tweens
-Tweens.Completed = Signal.new()
+Tweens.Completed = Instance.new("BindableEvent")
  
 function Tweener.new(tweens: {Tween})
 	return setmetatable(tweens, Tweens)
@@ -40,19 +39,9 @@ function Tweener.fromTweenInfos(instance: Instance, tweenInfos: {TweenInfo}, goa
 end
 
 function Tweens:PlayInParallel()
-	local tweensLeft = #self
-	
 	for _, tween in ipairs(self) do
 		tween:Play()
-		tween.Completed:Connect(function(playbackState)
-			tweensLeft -= 1
-		end)
 	end
-	
-	repeat
-		task.wait()
-	until tweensLeft < 1
-	
 	Tweens.Completed:Fire()
 end
 
