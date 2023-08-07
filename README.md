@@ -16,7 +16,7 @@ local Button = script.Parent.Button
 
 local tweens = Tweener.fromInstances({ Title, Button }, TweenInfo.new(1), { Transparency = 1 )
 tweens:PlayInParallel()
-tweens.Completed:Once(function()
+tweens.Completed.Event:Once(function()
     print("Tween is complete!")
 end)
 ```
@@ -55,7 +55,8 @@ Pauses every single tween. Similar to `Tween:Pause`.
 ### Tweens:Cancel()
 Cancel every single tween. Similar to `Tween:Cancel`.
 
-## Events
+## Bindable Events
 ### Tweens.Completed
 This event fires when all of the tweens were completed.
+Keep in mind that the RBXScriptSignal is inside the Completed.Event.
 
